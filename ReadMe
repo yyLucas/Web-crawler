@@ -1,0 +1,33 @@
+Spider ReadMe
+
+Please feel free to contact me at zhangysd@hotmail.com
+
+
+I have implemented the following functions:
+
+(1) Web crawler
+(2) Lucene search engine
+(3) Spring mvc framework for crawl and search
+(4) Jsoup client and parser
+
+
+Instruction:
+
+(1) Run either from SpiderController.java or AdvanceController under webCrawler.controller package.
+	SpiderController is using http client and parser.
+	AdvanceController is using Jsoup client and parser.
+(2) input "localhost:8080/spider" into the address bar of a browser, 
+	and you can specify the URL and depth to crawl. Hit crawl button to start crawl
+(3) After the crawl is successful, the console will display the message "Crawl successful",
+	and the searching page is shown.
+(4) Input keyword to search, enjoy the results.
+
+Notice:
+
+I did experience some problem about the application(Only with Httpclient and parser). 
+When the depth went high, the lucene indexer will throw "IOException - LockObtainFailedException". 
+This will cause the lucene index disappear, thus, no search results are returned.
+
+I guess it might be caused by two IndexWritters want to write to the same directory. 
+I dont understand why this happen because I'm using single thread. To solve it, I want to try lock the 
+directory when one writer writes to it. And I am planning to solve it in the future development.

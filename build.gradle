@@ -1,0 +1,44 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+version = '1.0'
+jar {
+	baseName = 'books'
+	version  = '1.0.0'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.thymeleaf:thymeleaf-spring4")
+	
+	compile ('org.jodd:jodd-lagarto:3.6.1')
+	compile ('org.apache.commons:commons-lang3:3.+')
+	compile ('org.springframework:spring-context:4.1.1.RELEASE')
+	
+	compile ('org.apache.httpcomponents:httpclient:4.5.1')
+  	compile ('org.htmlparser:htmlparser:2.1')
+  	compile ('org.apache.lucene:lucene-core:3.6.1')
+  	compile('org.apache.lucene:lucene-analyzers:3.6.1')
+  	
+  	compile('org.jsoup:jsoup:1.7.2')
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.0'
+}

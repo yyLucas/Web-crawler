@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Spider</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+  </head>
+
+  <body>
+    <h2>Web Searcher</h2>
+    <form method="POST"  action="search">
+      
+      <label for="searchString">Keyword Search:</label>
+      <input type="text" name="searchString" value="unitec"></input>
+      <input type="submit" value="search"></input><br/>
+
+  	  <ul th:each="Content : ${Content}">
+      <li>
+        <a th:href="${Content.uri}"><span th:text="${Content.uri}">URI</span></a><br/>
+        <span th:utext="${Content.content}">Content</span><br/>
+      </li>
+    </ul>
+    </form>
+
+  </body>
+</html>
