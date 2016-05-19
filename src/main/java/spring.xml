@@ -10,6 +10,7 @@
     <bean id="HttpSearch" class="webCrawler.search.HttpSearchImpl"/>
     
     <bean id="Spider" class="webCrawler.spider.Spider" autowire="constructor"/>
+    shdhaskjdash
 
 
 </beans>
